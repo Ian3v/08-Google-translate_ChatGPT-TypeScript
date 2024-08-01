@@ -1,5 +1,5 @@
 // import {Container, Row, Col} = from 'react-bootstrap'
-import { useReducer, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import './App.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col, Button, Form, Stack} from 'react-bootstrap'
@@ -10,6 +10,7 @@ import { AUTO_LANGUEAGE, SUPORTED_LANGUAGES } from './constants.js';
 import { ArrowsIcon } from './components/Icons.tsx';
 import { LanguageSelector} from './components/LanguageSelector.tsx'
 import { TextArea } from './components/TextArea.tsx'
+import { translate } from './services/translate.ts';
 // //! -------------------------------------------------------------------------- */
 //   bueno tenemos, el estado FromLanguage q esta en un useReducer del archiv useStore
 //   queremos actulizarlo con su funcion actulizador, setFromLanguage, q tambien esta en useStore
@@ -36,7 +37,18 @@ function App() {
 
   } = useStore()
 
-  
+  // useEffect(()=>{
+  //   // console.log('>', fromText, 'useEffect')
+  //   if(fromText ==='') return
+
+  //   translate({fromLanguage,toLanguage, text:fromText})
+  //     .then(result => {
+  //       if(result == null ) return //Va a comparar si es null o undefined 
+  //       // if(result ===null || result === undefined) return //Va a comparar si es null o undefined 
+  //       setResult(result)
+  //     })
+  //     .catch( ()=> {setResult('Error') }) 
+  // }, [fromText])
 
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
