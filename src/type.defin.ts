@@ -9,8 +9,8 @@ export type AutoLanguage = typeof AUTO_LANGUEAGE // AutoLanguage solo peude ser 
 export type FromLanguage = Language | AutoLanguage // FromLanguage solo peude ser uno de los dos, o el primero o el segundo
 /* -------------------------------------------------------------------------- */
 export interface State  {
-  fromLanguage:FromLanguage,
-  toLanguage: Language,
+  fromLanguage:string,
+  toLanguage: string,
   fromText: string,
   result: string,
   loading:boolean
@@ -22,8 +22,3 @@ export type Action =
 | { type: 'SET_TO_LANGUAGE', payload: string}
 | { type: 'SET_FROM_TEXT', payload: string}
 | { type: 'SET_RESULT', payload: string}
-
-export enum SectionType{
-  From = 'from',
-  To = 'to'
-}
